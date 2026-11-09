@@ -1,14 +1,15 @@
 
+
 plugins {
     id 'com.android.application'
 }
 
 android {
-    namespace 'com.mhaviir.90sbuswala'
+    namespace 'com.mhaviir.ninetybuswala'
     compileSdk 35
 
     defaultConfig {
-        applicationId 'com.mhaviir.90sbuswala'
+        applicationId 'com.mhaviir.ninetybuswala'
         minSdk 23
         targetSdk 35
         versionCode 1
