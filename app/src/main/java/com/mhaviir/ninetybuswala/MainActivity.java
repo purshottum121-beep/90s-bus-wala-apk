@@ -1,4 +1,3 @@
-
 package com.mhaviir.ninetybuswala;
 
 import android.app.Activity;
@@ -7,8 +6,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebSettings;
 import android.webkit.WebChromeClient;
-import android.view.View;
-import android.view.KeyEvent;
+import android.webkit.CookieManager;
 
 public class MainActivity extends Activity {
 
@@ -22,10 +20,20 @@ public class MainActivity extends Activity {
         setContentView(webView);
 
         WebSettings settings = webView.getSettings();
+
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
+        settings.setDatabaseEnabled(true);
+
+        settings.setMediaPlaybackRequiresUserGesture(false);
+
         settings.setLoadWithOverviewMode(true);
         settings.setUseWideViewPort(true);
+        settings.setJavaScriptCanOpenWindowsAutomatically(true);
+
+        CookieManager cookieManager = CookieManager.getInstance();
+        cookieManager.setAcceptCookie(true);
+        cookieManager.setAcceptThirdPartyCookies(webView, true);
 
         webView.setWebViewClient(new WebViewClient());
         webView.setWebChromeClient(new WebChromeClient());
